@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Red Backpack",
+    "category": "Bag",
+    "status": "Lost",
+    "location": "Dhanmondi",
+    "description": "Black laptop inside, last seen near Dhanmondi 27.",
+    "reward": "500",
+    "createdAt": "2026-05-02T18:55:08.693Z"
+  },
+  {
+    "id": 2,
+    "title": "Silver iPhone 12",
+    "category": "Electronics",
+    "status": "Found",
+    "location": "Banani",
+    "description": "Recovered at a security desk.",
+    "reward": "",
+    "createdAt": "2026-05-02T18:55:08.694Z"
+  }
+]

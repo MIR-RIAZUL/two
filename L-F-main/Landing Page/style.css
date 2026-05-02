@@ -124,6 +124,29 @@ body {
 
 .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
+.hub-link {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.hub-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text-dark);
+    background: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+.hub-link a:hover { transform: translateY(-2px); }
+
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
