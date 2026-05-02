@@ -6,17 +6,18 @@
     <title>Register Form - Portrait Mode</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="window flex">
         <!-- SIDEBAR -->
         <aside class="sidebar color3 white-text flex-column">
             <div class="padding">
-                <div class="logo">💎 PRODASH</div>
+                <div class="logo">🔍 Lost & Found</div>
                 <nav class="nav-menu flex-column gap-15">
-                    <div class="nav-item">Dashboard</div>
+                    <div class="nav-item"><a href="../index.html" style="text-decoration: none; color: inherit;">Dashboard</a></div>
                     <div class="nav-item active">Register</div>
-                    <div class="nav-item">Analytics</div>
+                    <div class="nav-item"><a href="../Login/index.html" style="text-decoration: none; color: inherit;">Login</a></div>
                 </nav>
             </div>
         </aside>
@@ -25,57 +26,43 @@
         <main class="main-body color2 flex center scrollable">
             <!-- PORTRAIT FORM CONTAINER -->
             <div class="portrait-container">
-                <h1 class="form-title">Register Form</h1>
+                <h1 class="form-title">Create Your Account</h1>
                 
                 <div class="form-card color1 border-radius shadow">
-                    <!-- Standard Inputs -->
-                    <div class="input-block">
-                        <label>User Name</label>
-                        <input type="text" placeholder="Value" class="white-input">
-                    </div>
-                    <div class="input-block">
-                        <label>Full Name</label>
-                        <input type="text" placeholder="Value" class="white-input">
-                    </div>
-                    <div class="input-block">
-                        <label>Email</label>
-                        <input type="email" placeholder="Value" class="white-input">
-                    </div>
-                    <div class="input-block">
-                        <label>Country</label>
-                        <input type="text" placeholder="Value" class="white-input">
-                    </div>
-                    <div class="input-block">
-                        <label>Password</label>
-                        <input type="password" placeholder="Value" class="white-input">
-                    </div>
-
-                    <!-- Gender Selection -->
-                    <div class="selection-group flex justify-between align-center">
-                        <label>Gender</label>
-                        <div class="flex gap-10">
-                            <button class="choice-btn shadow-sm">Male</button>
-                            <button class="choice-btn shadow-sm">Female</button>
+                    <form id="register-form">
+                        <!-- Required Fields -->
+                        <div class="input-block">
+                            <label for="reg-name">Full Name *</label>
+                            <input type="text" id="reg-name" name="name" placeholder="Your full name" class="white-input" required>
                         </div>
-                    </div>
-
-                    <!-- Date Selection -->
-                    <div class="selection-group flex justify-between align-center">
-                        <label>Date of Birth:</label>
-                        <div class="flex gap-5">
-                            <input type="text" placeholder="Day" class="date-box shadow-sm">
-                            <input type="text" placeholder="MM" class="date-box shadow-sm">
-                            <input type="text" placeholder="YYY" class="date-box shadow-sm">
+                        
+                        <div class="input-block">
+                            <label for="reg-email">Email *</label>
+                            <input type="email" id="reg-email" name="email" placeholder="your@email.com" class="white-input" required>
                         </div>
-                    </div>
+                        
+                        <div class="input-block">
+                            <label for="reg-password">Password (6+ characters) *</label>
+                            <input type="password" id="reg-password" name="password" placeholder="Create a strong password" class="white-input" required minlength="6">
+                        </div>
 
-                    <p class="terms-text">Agree with Terms & condition?</p>
+                        <p class="terms-text">
+                            <input type="checkbox" id="terms" required>
+                            I agree with Terms & Conditions
+                        </p>
 
-                    <!-- Main Action -->
-                    <button class="create-btn" onclick="location.href='../DashBoard/index.html'">Create Account</button>
+                        <!-- Main Action -->
+                        <button type="submit" class="create-btn">Create Account</button>
+                        
+                        <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+                            Already have an account? <a href="../Login/index.html" style="color: #007bff; text-decoration: none;">Sign in</a>
+                        </p>
+                    </form>
                 </div>
             </div>
         </main>
     </div>
+
+    <script src="../app.js"></script>
 </body>
 </html>

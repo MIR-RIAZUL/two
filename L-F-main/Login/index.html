@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -25,26 +26,30 @@
 
             <!-- Login Card -->
             <div class="form-body color1 border-radius shadow">
-                <div class="input-group">
-                    <label>Email</label>
-                    <input type="text" placeholder="Value" class="form-input">
-                </div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" placeholder="your@email.com" class="form-input" required>
+                    </div>
 
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="Value" class="form-input">
-                </div>
+                    <div class="input-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" placeholder="Your password" class="form-input" required>
+                    </div>
 
-                <button class="signin-btn white-text" onclick="location.href='../DashBoard/index.html'">Sign In</button>
+                    <button type="submit" class="signin-btn white-text">Sign In</button>
 
-                <div class="form-footer">
-                    <a href="../Forgot Password/index.html" class="forgot-text">Forgot password?</a>
-                    <a href="../Register-or-SignUp/index.html" class="forgot-text signup-link">Create account</a>
-                </div>
+                    <div class="form-footer">
+                        <a href="../Forgot Password/index.html" class="forgot-text">Forgot password?</a>
+                        <a href="../Register-or-SignUp/index.html" class="forgot-text signup-link">Create account</a>
+                    </div>
+                </form>
             </div>
 
         </div>
     </div>
+
+    <script src="../app.js"></script>
 </body>
 
 </html>

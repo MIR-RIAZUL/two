@@ -43,8 +43,8 @@
         <p class="subtitle">Detailed information helps items get returned faster.</p>
       </div>
       <div class="header-actions">
-        <button class="btn btn-secondary" onclick="resetForm()">Discard</button>
-        <button class="btn btn-primary" onclick="handlePost()">
+        <button type="reset" class="btn btn-secondary" form="report-form">Discard</button>
+        <button type="submit" class="btn btn-primary" form="report-form">
           <i class="fas fa-paper-plane"></i> Publish Post
         </button>
       </div>
@@ -53,57 +53,67 @@
     <div class="main-grid">
       <!-- Form Section -->
       <section class="form-container">
-        <div class="form-card">
-          <h2 class="card-label">Basic Information</h2>
-          
-          <div class="input-group">
-            <label>Item Title <span class="required">*</span></label>
-            <input type="text" id="title" placeholder="e.g. Lost Brown Leather Wallet" class="form-control">
-          </div>
-
-          <div class="input-row">
+        <form class="report-form" id="report-form">
+          <div class="form-card">
+            <h2 class="card-label">Basic Information</h2>
+            
             <div class="input-group">
-              <label>Category</label>
-              <select id="category" class="form-control">
-                <option value="electronics">Electronics</option>
-                <option value="pets">Pets</option>
-                <option value="documents">Documents</option>
-                <option value="others">Others</option>
-              </select>
+              <label for="report-title">Item Title <span class="required">*</span></label>
+              <input type="text" id="report-title" name="title" placeholder="e.g. Lost Brown Leather Wallet" class="form-control" required>
             </div>
+
+            <div class="input-row">
+              <div class="input-group">
+                <label for="report-category">Category</label>
+                <select id="report-category" name="category" class="form-control" required>
+                  <option value="">Select category...</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Pets">Pets</option>
+                  <option value="Documents">Documents</option>
+                  <option value="Bag">Bag</option>
+                  <option value="Key">Key</option>
+                  <option value="Paper">Paper</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label>Status <span class="required">*</span></label>
+                <div class="segmented">
+                  <button type="button" class="active" data-status="Lost">Lost</button>
+                  <button type="button" data-status="Found">Found</button>
+                </div>
+              </div>
+            </div>
+
             <div class="input-group">
-              <label>Status</label>
-              <div class="status-toggle">
-                <input type="radio" name="status" value="lost" id="lost" checked>
-                <label for="lost" class="toggle-btn lost">Lost</label>
-                <input type="radio" name="status" value="found" id="found">
-                <label for="found" class="toggle-btn found">Found</label>
+              <label for="report-description">Description</label>
+              <textarea id="report-description" name="description" rows="5" placeholder="Include brand, color, and unique marks..." class="form-control"></textarea>
+              <div class="counter-row">
+                <span id="charCount">0 / 500</span>
               </div>
             </div>
           </div>
 
-          <div class="input-group">
-            <label>Description</label>
-            <textarea id="desc" rows="5" placeholder="Include brand, color, and unique marks..." class="form-control"></textarea>
-            <div class="counter-row">
-              <span id="charCount">0 / 500</span>
+          <div class="form-card mt-20">
+            <h2 class="card-label">Location & Reward</h2>
+            <div class="input-row">
+              <div class="input-group icon-input">
+                <i class="fas fa-location-dot"></i>
+                <input type="text" id="report-location" name="location" placeholder="Specific location..." class="form-control" required>
+              </div>
+              <div class="input-group icon-input">
+                <i class="fas fa-money-bill"></i>
+                <input type="text" id="report-reward" name="reward" placeholder="Reward (optional)" class="form-control">
+              </div>
+            </div>
+            
+            <div class="input-group">
+              <label for="report-image">Upload Image</label>
+              <input type="file" id="report-image" name="image" accept="image/*" class="form-control">
+              <p style="font-size: 12px; color: #666; margin-top: 5px;">Max 5MB, supports JPEG, PNG, GIF, WebP</p>
             </div>
           </div>
-        </div>
-
-        <div class="form-card mt-20">
-          <h2 class="card-label">Location & Date</h2>
-          <div class="input-row">
-            <div class="input-group icon-input">
-              <i class="fas fa-location-dot"></i>
-              <input type="text" id="location" placeholder="Specific location..." class="form-control">
-            </div>
-            <div class="input-group icon-input">
-              <i class="fas fa-calendar"></i>
-              <input type="date" id="date" class="form-control">
-            </div>
-          </div>
-        </div>
+        </form>
       </section>
 
       <!-- Sidebar Section -->
@@ -136,6 +146,7 @@
 
   <div id="toast" class="toast"></div>
 
+  <script src="../app.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

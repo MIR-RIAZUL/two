@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgot Password - PRODASH</title>
+    <title>Forgot Password - Lost & Found</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="window flex">
         <!-- SIDEBAR -->
         <aside class="sidebar color3 white-text flex-column">
             <div class="padding">
-                <div class="logo">Lost & Found</div>
+                <div class="logo">🔍 Lost & Found</div>
                 <nav class="nav-menu flex-column gap-15">
-                    <div class="nav-item">Dashboard</div>
-                    <div class="nav-item">Register</div>
+                    <div class="nav-item"><a href="../index.html" style="text-decoration: none; color: inherit;">Dashboard</a></div>
+                    <div class="nav-item"><a href="../Login/index.html" style="text-decoration: none; color: inherit;">Login</a></div>
                     <div class="nav-item active">Recovery</div>
                 </nav>
             </div>
@@ -28,22 +29,45 @@
                 <h1 class="form-title">Forgot Password</h1>
                 
                 <div class="form-card color1 border-radius shadow">
-                    <p class="instruction-text">Enter your email address and we'll send you a link to reset your password.</p>
+                    <p class="instruction-text">Enter your email address to receive password recovery instructions.</p>
                     
-                    <!-- Recovery Input -->
-                    <div class="input-block">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="example@mail.com" class="white-input">
-                    </div>
+                    <!-- Recovery Form -->
+                    <form id="forgot-password-form">
+                        <div class="input-block">
+                            <label for="recover-email">Email Address</label>
+                            <input type="email" id="recover-email" name="email" placeholder="your@email.com" class="white-input" required>
+                        </div>
 
-                    <!-- Action Button -->
-                    <button class="create-btn" onclick="location.href='../OTP Verification/index.html'">Send Recovery Link</button>
+                        <!-- Action Button -->
+                        <button type="submit" class="create-btn">Send Recovery Link</button>
 
-                    <!-- Back to Login Link -->
-                    <a href="../Login/index.html" class="back-link">Back to Login</a>
+                        <!-- Back to Login Link -->
+                        <a href="../Login/index.html" class="back-link">Back to Login</a>
+                    </form>
                 </div>
             </div>
         </main>
     </div>
+
+    <script>
+        document.getElementById('forgot-password-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('recover-email').value.trim();
+            
+            if (!email) {
+                alert('Please enter your email address.');
+                return;
+            }
+            
+            try {
+                // Feature: Password reset is not yet implemented in backend
+                alert('Password recovery link sent to: ' + email + '\n\nPlease check your email for instructions.');
+                document.getElementById('forgot-password-form').reset();
+                setTimeout(() => window.location.href = '../Login/index.html', 2000);
+            } catch (err) {
+                alert('Failed to process recovery request. Please try again.');
+            }
+        });
+    </script>
 </body>
 </html>

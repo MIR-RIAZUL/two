@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lost & Found Desktop</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- Sidebar -->
     <nav class="sidebar">
-        <div class="logo">Lost & Found</div>
+        <div class="logo">🔍 Lost & Found</div>
         <ul class="nav-links">
-            <li class="active" onclick="location.href='../DashBoard/index.html'"><i class="fas fa-home"></i> Home</li>
-            <li onclick="location.href='../Browse Listings/index.html'"><i class="fas fa-search"></i> Browse</li>
-            <li onclick="location.href='../Create Post/index.html'"><i class="fas fa-plus-square"></i> Post</li>
-            <li onclick="location.href='../Profile Page/index.html'"><i class="fas fa-user"></i> Profile</li>
+            <li class="active" data-page="dashboard"><i class="fas fa-home"></i> <a href="../DashBoard/index.html">Home</a></li>
+            <li data-page="browse"><i class="fas fa-search"></i> <a href="../Browse Listings/index.html">Browse</a></li>
+            <li data-page="create"><i class="fas fa-plus-square"></i> <a href="../Create Post/index.html">Post</a></li>
+            <li data-page="profile"><i class="fas fa-user"></i> <a href="../Profile Page/index.html">Profile</a></li>
         </ul>
     </nav>
 
@@ -24,11 +24,12 @@
         <!-- Header -->
         <header class="top-header">
             <div class="search-bar">
-                <i class="fas fa-search" onclick="location.href='../Search Results/index.html'"></i>
-                <input type="text" placeholder="Search For Lost and Found" onkeydown="if(event.key === 'Enter') location.href='../Search Results/index.html'">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search For Lost and Found">
             </div>
             <div class="notifications" onclick="location.href='../Notifications/index.html'">
                 <i class="fas fa-bell"></i>
+                <span class="badge">3</span>
             </div>
         </header>
 
@@ -36,26 +37,26 @@
         <section class="section">
             <h2>Browse by Category</h2>
             <div class="category-grid">
-                <div class="category-card" onclick="location.href='../Electroincs Category/index.html'">
+                <a class="category-card" href="../Electroincs Category/index.html">
                     <div class="icon-box"><i class="fas fa-laptop"></i></div>
                     <p>Electronics</p>
-                </div>
-                <div class="category-card" onclick="location.href='../Pets Category/index.html'">
+                </a>
+                <a class="category-card" href="../Pets Category/index.html">
                     <div class="icon-box"><i class="fas fa-paw"></i></div>
                     <p>Pets</p>
-                </div>
-                <div class="category-card" onclick="location.href='../Bag Category/index.html'">
+                </a>
+                <a class="category-card" href="../Bag Category/index.html">
                     <div class="icon-box"><i class="fas fa-briefcase"></i></div>
                     <p>Bag</p>
-                </div>
-                <div class="category-card" onclick="location.href='../Key Category/index.html'">
+                </a>
+                <a class="category-card" href="../Key Category/index.html">
                     <div class="icon-box"><i class="fas fa-key"></i></div>
                     <p>Key</p>
-                </div>
-                <div class="category-card" onclick="location.href='../Paper Category/index.html'">
+                </a>
+                <a class="category-card" href="../Paper Category/index.html">
                     <div class="icon-box"><i class="fas fa-file-alt"></i></div>
                     <p>Paper</p>
-                </div>
+                </a>
             </div>
         </section>
 
@@ -68,36 +69,51 @@
 
             <!-- Filter Tabs -->
             <div class="filter-tabs">
-                <button class="filter-tab active" onclick="filterPosts('all', this)">All</button>
-                <button class="filter-tab" onclick="filterPosts('lost', this)">Lost</button>
-                <button class="filter-tab" onclick="filterPosts('found', this)">Found</button>
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="lost">Lost</button>
+                <button class="filter-tab" data-filter="found">Found</button>
             </div>
 
-            <div class="posts-grid" id="postsGrid">
+            <div class="posts-grid card-grid" id="postsGrid">
+                <!-- Posts loaded dynamically from API -->
+                <p style="color: #999;">Loading posts...</p>
+            </div>
+        </section>
+    </main>
 
-                <div class="post-card" data-status="lost" onclick="location.href='../Post Details/index.html'">
-                    <div class="img-placeholder" style="background:#f5e6d3;">👜</div>
-                    <div class="post-info">
-                        <span class="status-badge status-lost">Lost</span>
-                        <h3>Lost Wallet</h3>
-                        <p class="category-label"><i class="fas fa-tag"></i> Category: Bag</p>
-                        <span class="time"><i class="far fa-clock"></i> 2 hours ago</span>
-                    </div>
-                    <i class="far fa-heart heart-icon"></i>
-                </div>
+    <script src="../app.js"></script>
+    <script>
+        // Handle search
+        document.getElementById('search-input')?.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const query = encodeURIComponent(e.target.value.trim());
+                window.location.href = '../Search Results/index.html?q=' + query;
+            }
+        });
 
-                <div class="post-card" data-status="found" onclick="location.href='../Post Details/index.html'">
-                    <div class="img-placeholder" style="background:#ddeeff;">📱</div>
-                    <div class="post-info">
-                        <span class="status-badge status-found">Found</span>
-                        <h3>Found iPhone 13</h3>
-                        <p class="category-label"><i class="fas fa-tag"></i> Category: Electronics</p>
-                        <span class="time"><i class="far fa-clock"></i> 3 hours ago</span>
-                    </div>
-                    <i class="far fa-heart heart-icon"></i>
-                </div>
+        // Handle filter tabs
+        document.querySelectorAll('[data-filter]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.dataset.filter;
+                
+                if (filter === 'all') {
+                    document.querySelectorAll('.card-grid > article').forEach(card => {
+                        card.style.display = '';
+                    });
+                } else {
+                    document.querySelectorAll('.card-grid > article').forEach(card => {
+                        const status = card.getAttribute('data-status');
+                        card.style.display = status === filter ? '' : 'none';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 
-                <div class="post-card" data-status="found" onclick="location.href='../Post Details/index.html'">
+</html>
                     <div class="img-placeholder" style="background:#e8f5e9;">📲</div>
                     <div class="post-info">
                         <span class="status-badge status-found">Found</span>
