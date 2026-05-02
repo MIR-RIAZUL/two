@@ -1,0 +1,230 @@
+:root {
+    --primary-teal: #008b8b;
+    --bg-light: #e0f2f1;
+    --card-border: #b2dfdb;
+    --text-color: #333;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+}
+
+/* Header Styles */
+.header-main {
+    background-color: var(--primary-teal);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left h1 { font-size: 1.1rem; margin: 0; letter-spacing: 0.5px; }
+
+.search-box {
+    position: relative;
+    width: 450px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    color: #888;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-avatar img { border-radius: 50%; }
+
+/* Filter Nav */
+.filter-nav {
+    background: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-group button {
+    background: none;
+    border: 1px solid var(--primary-teal);
+    padding: 5px 15px;
+    border-radius: 15px;
+    margin-right: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.btn-group button.active { background: var(--primary-teal); color: white; }
+
+.pill-group { margin-top: 10px; display: flex; gap: 8px; }
+.pill-group span {
+    border: 1px solid var(--card-border);
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: #555;
+}
+
+.filter-controls { display: flex; align-items: center; gap: 15px; }
+.filter-main-btn {
+    border: 1px solid var(--primary-teal);
+    background: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.hub-tools { font-size: 0.7rem; border-left: 1px solid #ccc; padding-left: 10px; }
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr 280px;
+    gap: 15px;
+    padding: 15px;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 0.95rem;
+    color: var(--primary-teal);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Charts & Lists */
+.mini-graph-row { display: flex; gap: 5px; margin-top: 10px; }
+.graph-item { flex: 1; text-align: center; font-size: 0.7rem; }
+.line-svg { height: 40px; background: #f0f8f8; border-radius: 4px; }
+
+.op-flex { display: flex; align-items: center; margin-top: 10px; }
+.op-list { list-style: none; padding: 0; font-size: 0.7rem; flex: 1; }
+.op-list li { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #f9f9f9; }
+
+.peak-graph { width: 100px; height: 60px; background: linear-gradient(transparent, #e0f2f1); border-bottom: 2px solid var(--primary-teal); }
+
+.fin-table { width: 100%; font-size: 0.7rem; margin-top: 10px; border-collapse: collapse; }
+.fin-table td { padding: 4px; border-bottom: 1px solid #eee; }
+
+/* Map Area */
+.map-container {
+    background: white;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    height: 100%;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ea/Dhaka_City_Map.png');
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.top-loss-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255,255,255,0.9);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    z-index: 5;
+    border: 1px solid #ccc;
+}
+
+.top-loss-overlay ul { list-style: none; padding: 0; margin: 5px 0 0 0; }
+.top-loss-overlay i { width: 20px; color: var(--primary-teal); }
+
+.heatmap-legend {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    border: 1px solid #ccc;
+}
+
+.heatmap-legend .box { display: inline-block; width: 12px; height: 12px; margin-right: 5px; }
+.high { background: #d32f2f; }
+.medium { background: #fbc02d; }
+.low { background: #42a5f5; }
+
+/* Feed Section */
+.category-tabs { display: flex; gap: 10px; font-size: 0.7rem; margin-bottom: 15px; }
+.feed-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.feed-icon { font-size: 1.2rem; color: var(--primary-teal); }
+.feed-desc strong { font-size: 0.8rem; }
+.feed-desc p { margin: 0; font-size: 0.65rem; color: #777; }
+.more { margin-left: auto; color: #ccc; cursor: pointer; }
+
+/* Action Footer */
+.action-label { padding: 10px 15px 0; font-weight: bold; color: var(--primary-teal); font-size: 0.9rem; }
+.action-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.action-item {
+    background: white;
+    border: 1px solid var(--card-border);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.action-item:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.action-item i { font-size: 1.5rem; color: var(--primary-teal); }
+.action-item h4 { margin: 0; font-size: 0.85rem; }
+.action-item p { margin: 0; font-size: 0.7rem; color: #666; }
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .dashboard-grid { grid-template-columns: 1fr 1fr; }
+    .col-right { grid-column: span 2; }
+    .action-footer { grid-template-columns: 1fr 1fr; }
+}

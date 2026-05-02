@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Edit Workspace | Lost & Found</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    <div class="logo-brand">
+      <div class="logo-icon"><i class="fas fa-shield-heart"></i></div>
+      <span>L&F Admin</span>
+    </div>
+    
+    <div class="nav-menu">
+      <a href="../DashBoard/index.html" class="nav-link"><i class="fas fa-chart-pie"></i> Dashboard</a>
+      <a href="#" class="nav-link active"><i class="fas fa-layer-group"></i> My Listings</a>
+      <a href="../Conversations/index.html" class="nav-link"><i class="fas fa-envelope"></i> Messages</a>
+      <a href="../Add Favorite Post/index.html" class="nav-link"><i class="fas fa-heart"></i> Favorites</a>
+      <a href="../Profile Page/index.html" class="nav-link"><i class="fas fa-user-gear"></i> Settings</a>
+    </div>
+
+    <div class="sidebar-user">
+      <img src="https://ui-avatars.com/api/?name=User&background=00cfe8&color=fff" alt="User">
+      <div class="user-meta">
+        <span class="u-name">Alex Morgan</span>
+        <span class="u-role">Pro Member</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <header class="page-header">
+      <div class="header-info">
+        <div class="breadcrumb">Listings / Edit Mode / #LF-90210</div>
+        <h1>Modify Listing</h1>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-ghost" onclick="window.history.back()">Discard</button>
+        <button class="btn btn-primary" onclick="handleUpdate()">
+          <i class="fas fa-cloud-arrow-up"></i> Save Changes
+        </button>
+      </div>
+    </header>
+
+    <div class="workspace-grid">
+      <!-- Left Column: Primary Content -->
+      <div class="form-column">
+        <div class="card">
+          <h2 class="card-label">Core Details</h2>
+          
+          <div class="input-group">
+            <label class="label">Product Title</label>
+            <input type="text" class="form-control" id="title" value="Found: Black Leather Wallet">
+          </div>
+
+          <div class="input-row">
+            <!-- Category -->
+            <div class="input-group">
+              <label class="label">Category</label>
+              <div class="select-wrapper">
+                <select class="form-control" id="category">
+                  <option value="electronics">Electronics</option>
+                  <option value="personal" selected>Personal Items</option>
+                  <option value="documents">ID & Documents</option>
+                  <option value="pets">Pets</option>
+                </select>
+                <i class="fas fa-chevron-down select-arrow"></i>
+              </div>
+            </div>
+
+            <!-- Status -->
+            <div class="input-group">
+              <label class="label">Item Status</label>
+              <div class="select-wrapper">
+                <select class="form-control status-indicator" id="status">
+                  <option value="lost">🔴 Reported Lost</option>
+                  <option value="found" selected>🟢 Reported Found</option>
+                  <option value="resolved">🔵 Resolved / Returned</option>
+                </select>
+                <i class="fas fa-chevron-down select-arrow"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="label">Full Description</label>
+            <textarea class="form-control" rows="6" id="desc">Found near the food court. Contains a local transit card. Please describe the brand to claim.</textarea>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-label">Media Gallery</h2>
+          <div class="media-manager">
+            <div class="current-photos">
+              <div class="photo-box">
+                <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=200" alt="Item">
+                <button class="photo-del"><i class="fas fa-times"></i></button>
+                <button class="favorite-overlay" onclick="toggleFavorite(this)">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+              <div class="upload-placeholder" onclick="document.getElementById('fileInput').click()">
+                <i class="fas fa-plus"></i>
+                <span>Add Photo</span>
+              </div>
+            </div>
+            <input type="file" id="fileInput" hidden>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Actions & Insights -->
+      <div class="status-column">
+        <div class="card">
+          <h2 class="card-label">Quick Actions</h2>
+          <div class="management-actions">
+            <button class="btn btn-outline" id="fav-main-btn" onclick="toggleFavorite(this)">
+              <i class="far fa-heart"></i> <span>Add to Favorites</span>
+            </button>
+            <button class="btn btn-outline">
+              <i class="fas fa-share-nodes"></i> Share Post
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-label">Insights</h2>
+          <div class="stats-mini">
+            <div class="stat-item"><span>Views</span><strong>412</strong></div>
+            <div class="stat-item"><span>Claims</span><strong>3</strong></div>
+          </div>
+        </div>
+
+        <div class="card danger-card">
+          <h2 class="card-label" style="color: #ef4444;">Danger Zone</h2>
+          <p class="danger-text">Deleting this post will remove all associated chat history permanently.</p>
+          <button class="btn btn-danger" onclick="confirmDelete()">
+            <i class="fas fa-trash-can"></i> Delete Post
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

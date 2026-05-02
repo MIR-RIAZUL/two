@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Overview (Admin Panel)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="logo-section">
+            <i class="fas fa-network-wired"></i>
+            <h1>SYSTEM OVERVIEW (ADMIN PANEL)</h1>
+        </div>
+        <nav class="top-nav">
+            <div class="nav-item"><i class="fas fa-th-large"></i> Main Dashboard</div>
+            <div class="nav-item"><i class="fas fa-chart-line"></i> Full Analytics</div>
+            <div class="nav-item"><i class="fas fa-cog"></i> Panel Settings</div>
+            <div class="admin-profile">
+                <img src="https://via.placeholder.com/30" alt="Admin">
+            </div>
+        </nav>
+    </header>
+
+    <div class="sub-nav">
+        <div class="menu-tabs">
+            <span><i class="fas fa-comments"></i> Moderation</span>
+            <span><i class="fas fa-hubspot"></i> Hub Management</span>
+            <span><i class="fas fa-users-cog"></i> User Analytics</span>
+            <span><i class="fas fa-file-alt"></i> Reports Center</span>
+        </div>
+        <div class="filter-bar">
+            <button class="active">All Data</button>
+            <button>Flags</button>
+            <button>Pending Reviews</button>
+            <button>Fraud Alerts</button>
+            <button>Advanced Filters</button>
+        </div>
+    </div>
+
+    <div class="search-container animate__animated animate__fadeIn">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search Users, Items, or Reports">
+    </div>
+
+    <main class="dashboard-grid">
+        
+        <section class="card key-metrics animate__animated animate__fadeInUp">
+            <h3>Key Metrics</h3>
+            <div class="metric-row">
+                <div class="metric-text">
+                    <p>Total Users:</p>
+                    <h2>25,000</h2>
+                    <p>Total Items:</p>
+                    <h2>75,000</h2>
+                    <p>Match Rate:</p>
+                    <h2>68%</h2>
+                </div>
+                <div class="metric-graph">
+                    <div class="wave-line"></div>
+                    <div class="wave-line"></div>
+                    <div class="processed-box">
+                        <p>Processed:</p>
+                        <h3>5,000 BDT</h3>
+                        <span>Last 30 Days</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bar-chart-placeholder">
+                <div class="bar" style="height: 40%;"></div>
+                <div class="bar" style="height: 60%;"></div>
+                <div class="bar" style="height: 35%;"></div>
+                <div class="bar" style="height: 80%;"></div>
+                <div class="bar" style="height: 50%;"></div>
+                <div class="bar" style="height: 90%;"></div>
+            </div>
+        </section>
+
+        <section class="card intelligence animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <h3>System Intelligence</h3>
+            <p class="sub-title">Top Loss Hotspots</p>
+            <div class="hotspot-chart">
+                <div class="h-bar" style="height: 80%;"><span>#1 UIU Cafeteria</span></div>
+                <div class="h-bar" style="height: 60%;"><span>#2 Library</span></div>
+                <div class="h-bar" style="height: 40%;"><span>#3 Dormitory</span></div>
+                <div class="h-bar" style="height: 30%;"><span>#4 Dormitory</span></div>
+                <div class="h-bar" style="height: 25%;"><span>#5 Dormitory</span></div>
+            </div>
+            <hr>
+            <h3>Active Live Tracks</h3>
+            <div class="live-track-content">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <table class="track-table">
+                    <tr><th>User</th><th>ETA</th><th>Status</th></tr>
+                    <tr><td>Ahmed BD</td><td>02:15</td><td class="status-green">Status</td></tr>
+                    <tr><td>Ahmed BD</td><td>03:28</td><td class="status-new">New</td></tr>
+                    <tr><td>Ahmed BD</td><td>02:46</td><td class="status-open">Open</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <div class="right-col">
+            <section class="card flags animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="card-header">
+                    <h3>Recent Flags (NID & Police GD)</h3>
+                    <i class="fas fa-flag-checkered"></i>
+                </div>
+                <table class="flag-table">
+                    <thead>
+                        <tr><th>User</th><th>Flag Type</th><th>Status</th><th>Action</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>@ahmed BD</td><td>NID</td><td>Verified</td><td><button class="btn-sm">Direct</button></td></tr>
+                        <tr><td>@ahmed BD</td><td>NID</td><td>Verified</td><td><button class="btn-sm">Direct</button></td></tr>
+                        <tr><td>@ahmed BD</td><td>NID</td><td>Verified</td><td><button class="btn-sm active-btn">Action</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="card payments animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <div class="card-header">
+                    <h3>bKash Payments</h3>
+                    <span class="bkash-logo">bKash</span>
+                </div>
+                <table class="pay-table">
+                    <tr><th>Recent</th><th>User ID</th><th>Amount</th><th>Status</th></tr>
+                    <tr><td>June 2021</td><td>@ahmed1</td><td>5,000</td><td class="status-green">Processed</td></tr>
+                    <tr><td>June 2021</td><td>@ahmed2</td><td>5,000</td><td class="status-green">Processed</td></tr>
+                </table>
+                <div class="mini-line-chart"></div>
+            </section>
+        </div>
+
+    </main>
+
+    <div class="quick-actions-title">Quick Actions</div>
+    <footer class="quick-actions animate__animated animate__fadeIn">
+        <div class="action-btn">
+            <i class="fas fa-file-medical-alt"></i>
+            <div>
+                <h4>View Detailed Reports</h4>
+                <p>Access all case files</p>
+            </div>
+        </div>
+        <div class="action-btn">
+            <i class="fas fa-bullhorn"></i>
+            <div>
+                <h4>Moderate Flagged Items</h4>
+                <p>Review pending actions</p>
+            </div>
+        </div>
+        <div class="action-btn">
+            <i class="fas fa-project-diagram"></i>
+            <div>
+                <h4>Create New Hub</h4>
+                <p>Add campus canteen or library</p>
+            </div>
+        </div>
+        <div class="action-btn">
+            <i class="fas fa-file-pdf"></i>
+            <div>
+                <h4>Generate Weekly Report</h4>
+                <p>Create PDF analytics</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <span>Dashboard Home</span>
+        <span>Browse All Data</span>
+        <span>Post a Report</span>
+        <span>User Profile (Admin)</span>
+        <span>System Status</span>
+        <span>Legal Info</span>
+    </div>
+
+</body>
+</html>

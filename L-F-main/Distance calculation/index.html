@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-links">
+                <span class="active">Dashboard</span>
+                <span>My Trips</span>
+                <span>Support</span>
+            </div>
+            <div class="header-profile">
+                <i data-lucide="user-circle"></i>
+                <i data-lucide="log-out" class="logout-icon"></i>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="map-section">
+                <div class="transport-tabs">
+                    <button class="tab active"><i data-lucide="car"></i> By Car</button>
+                    <button class="tab"><i data-lucide="bus"></i> Public Transit</button>
+                    <button class="tab"><i data-lucide="walking"></i> Walking</button>
+                    <button class="tab"><i data-lucide="bike"></i> By Bicycle</button>
+                </div>
+                
+                <div class="map-canvas">
+                    <div class="route-overlay"></div>
+                    <div class="pin pin-a">A</div>
+                    <div class="pin pin-b">B</div>
+                    <div class="map-controls">
+                        <button><i data-lucide="maximize"></i></button>
+                        <button><i data-lucide="plus"></i></button>
+                        <button><i data-lucide="minus"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="details-panel">
+                <div class="card summary-card">
+                    <h3>Route Summary <i data-lucide="info"></i></h3>
+                    <div class="main-stats">
+                        <span class="dist">4.2 Km</span>
+                        <span class="divider">|</span>
+                        <span class="time">12 min</span>
+                    </div>
+                    <p>Via Mirpur Road & Panthapath (with current traffic)</p>
+                    <p class="traffic-status">Fastest Route. Real-time traffic data.</p>
+                </div>
+
+                <div class="card stops-card">
+                    <h3>Stop Locations <i data-lucide="map-pin"></i></h3>
+                    <div class="location-item">
+                        <span class="dot a">A</span>
+                        <div>
+                            <strong>From:</strong>
+                            <p>Your current location (Dhanmondi)</p>
+                        </div>
+                    </div>
+                    <div class="location-item">
+                        <span class="dot b">B</span>
+                        <div>
+                            <strong>To:</strong>
+                            <p>UIU Hub</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card alt-card">
+                    <div class="alt-header">
+                        <h3>Alternatives</h3>
+                        <div class="alt-icons">
+                            <i data-lucide="navigation"></i>
+                            <i data-lucide="car"></i>
+                            <i data-lucide="clock"></i>
+                        </div>
+                    </div>
+                    <div class="alt-content">
+                        Alternative: 5.1 km | 15 min via Satmasjid Rd.
+                    </div>
+                </div>
+
+                <button class="start-btn">
+                    Start Navigation <i data-lucide="navigation-2"></i>
+                </button>
+
+                <div class="user-card">
+                    <div class="user-avatar"></div>
+                    <div class="user-info">
+                        <strong>User Profile</strong>
+                        <p>Change User/Route</p>
+                    </div>
+                    <i data-lucide="chevron-right"></i>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Initialize the icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

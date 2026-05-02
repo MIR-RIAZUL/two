@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+    <header class="header-main">
+        <div class="header-left">
+            <h1>PERFORMANCE ANALYTICS DASHBOARD</h1>
+        </div>
+        <div class="header-center">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search analytics for Users, Items, or Hubs">
+            </div>
+        </div>
+        <div class="header-right">
+            <i class="fas fa-th"></i>
+            <i class="fas fa-bell"></i>
+            <div class="user-avatar">
+                <img src="https://via.placeholder.com/30" alt="Admin">
+            </div>
+        </div>
+    </header>
+
+    <nav class="filter-nav">
+        <div class="nav-groups">
+            <div class="btn-group">
+                <button class="active">Overview</button>
+                <button>Hub Performance</button>
+                <button>User Insights</button>
+                <button>Batch Reports</button>
+            </div>
+            <div class="pill-group">
+                <span>All Data</span>
+                <span>Last 7 Days</span>
+                <span>Last 30 Days</span>
+                <span>Custom Range</span>
+                <span>Dhanmondi Hub</span>
+                <span>Police GD</span>
+            </div>
+        </div>
+        <div class="filter-controls">
+            <button class="filter-icon-btn"><i class="fas fa-filter"></i></button>
+            <button class="filter-main-btn"><i class="fas fa-sliders-h"></i> Filter</button>
+            <div class="hub-tools">
+                <strong>Analytical Hub Tools</strong>
+                <p>reference conceptual</p>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-grid">
+        
+        <div class="col-left animate__animated animate__fadeInLeft">
+            <section class="card stats-card">
+                <h3>Operational & Financial Stats</h3>
+                <div class="growth-metrics">
+                    <p><strong>Key Growth Metrics</strong></p>
+                    <small>Total Users: 30,000 | Match Rate: 7</small><br>
+                    <small>Item Listings: 110,000</small>
+                    <div class="mini-graph-row">
+                        <div class="graph-item"><p>Users</p><div class="line-svg"></div></div>
+                        <div class="graph-item"><p>Items</p><div class="line-svg"></div></div>
+                        <div class="graph-item"><p>Match Rate: 7</p><div class="line-svg"></div></div>
+                    </div>
+                </div>
+
+                <div class="op-reports">
+                    <h4>Operational Reports</h4>
+                    <p><small>Avg. Resolution Time: 2 hrs | Verified Handovers: 15</small></p>
+                    <div class="op-flex">
+                        <ul class="op-list">
+                            <li>Active Live Tracks <span>2 hrs</span></li>
+                            <li>Active Live Tracks <span>5</span></li>
+                            <li>Active Live Tracks <span>5</span></li>
+                            <li>Active Live Tracks <span>2 hrs</span></li>
+                        </ul>
+                        <div class="peak-graph"></div>
+                    </div>
+                </div>
+
+                <div class="financial-summary">
+                    <h4>Financial Summary (bKash/Nagad)</h4>
+                    <div class="fin-stats">
+                        <div><small>Processed Bounties:</small> <strong>20,000 BDT</strong></div>
+                        <div><small>Revenue Share:</small> <strong>3,000 BDT</strong></div>
+                    </div>
+                    <table class="fin-table">
+                        <tr><td>Transaction List</td><td>2,000 BDT</td></tr>
+                        <tr><td>Transaction 2nd</td><td>1,000 BDT</td></tr>
+                        <tr><td>Transaction 3rd</td><td>2,000 BDT</td></tr>
+                    </table>
+                    <div class="wave-chart-bottom"></div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-mid animate__animated animate__fadeIn">
+            <div class="map-container">
+                <div class="top-loss-overlay">
+                    <h4>Top Loss Locations</h4>
+                    <ul>
+                        <li><i class="fas fa-utensils"></i> Cafeteria - 280</li>
+                        <li><i class="fas fa-book"></i> Library - 110</li>
+                        <li><i class="fas fa-bed"></i> Dorm - 90</li>
+                        <li><i class="fas fa-door-open"></i> Main Gate - 30</li>
+                    </ul>
+                </div>
+                <div class="heatmap-legend">
+                    <div><span class="box high"></span> High</div>
+                    <div><span class="box medium"></span> Medium</div>
+                    <div><span class="box low"></span> Low</div>
+                </div>
+                <div class="map-bg"></div>
+            </div>
+        </div>
+
+        <div class="col-right animate__animated animate__fadeInRight">
+            <section class="card feed-card">
+                <h3>Live Item Feed</h3>
+                <div class="category-tabs">
+                    <span><i class="fas fa-laptop"></i> Electronics</span>
+                    <span><i class="fas fa-wallet"></i> Wallets</span>
+                    <span><i class="fas fa-id-card"></i> IDs</span>
+                </div>
+                
+                <div class="feed-scroll">
+                    <div class="feed-box">
+                        <i class="fas fa-mobile-alt feed-icon"></i>
+                        <div class="feed-desc">
+                            <strong>Electronics</strong>
+                            <p>conceptual conceptual illustrative</p>
+                        </div>
+                        <i class="fas fa-ellipsis-h more"></i>
+                    </div>
+                    <div class="feed-box">
+                        <i class="fas fa-wallet feed-icon"></i>
+                        <div class="feed-desc">
+                            <strong>Wallets</strong>
+                            <p>conceptual conceptual illustrative</p>
+                        </div>
+                        <i class="fas fa-ellipsis-h more"></i>
+                    </div>
+                    <div class="feed-box">
+                        <i class="fas fa-address-card feed-icon"></i>
+                        <div class="feed-desc">
+                            <strong>IDs</strong>
+                            <p>CONCEPT 1 conceptual</p>
+                        </div>
+                        <i class="fas fa-ellipsis-h more"></i>
+                    </div>
+                    <div class="feed-box">
+                        <i class="fas fa-key feed-icon"></i>
+                        <div class="feed-desc">
+                            <strong>Keys</strong>
+                            <p>CONCEPT 1 conceptual</p>
+                        </div>
+                        <i class="fas fa-ellipsis-h more"></i>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="action-label">Operational Actions</div>
+    <footer class="action-footer animate__animated animate__fadeInUp">
+        <div class="action-item">
+            <i class="fas fa-file-medical-alt"></i>
+            <div>
+                <h4>View Detailed Reports</h4>
+                <p>Comprehensive change history</p>
+            </div>
+        </div>
+        <div class="action-item">
+            <i class="fas fa-balance-scale"></i>
+            <div>
+                <h4>Compare Hubs</h4>
+                <p>Key metric comparison grid</p>
+            </div>
+        </div>
+        <div class="action-item">
+            <i class="fas fa-file-invoice"></i>
+            <div>
+                <h4>Generate Insight Report</h4>
+                <p>Create PDF analytics documents</p>
+            </div>
+        </div>
+        <div class="action-item">
+            <i class="fas fa-download"></i>
+            <div>
+                <h4>Export All Data</h4>
+                <p>Detailed dumps (CSV/JSON)</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

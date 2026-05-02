@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Support | Police Support Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="web-theme">
+
+    <main class="dashboard-shell">
+        <!-- Professional Top Bar -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <button class="back-circle" onclick="window.history.back()">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="page-identity">
+                    <span class="badge">Official Support</span>
+                    <h1>Police Support</h1>
+                </div>
+            </div>
+            
+            <div class="search-bar">
+                <i class="fas fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search by area or station name...">
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <!-- Left Side: Station List -->
+            <section class="stations-column">
+                <div class="section-header">
+                    <h2>Nearby Police Stations</h2>
+                    <span class="count">3 Locations found</span>
+                </div>
+
+                <div class="station-list">
+                    <!-- Station 1 -->
+                    <article class="station-card">
+                        <div class="station-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="station-details">
+                            <h3>Gulshan Police Station</h3>
+                            <p class="distance"><i class="fas fa-route"></i> 2.3 km from your location</p>
+                            <a href="tel:029884088" class="call-btn">
+                                <i class="fas fa-phone"></i> 02-9884088
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Station 2 -->
+                    <article class="station-card">
+                        <div class="station-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="station-details">
+                            <h3>Banani Police Station</h3>
+                            <p class="distance"><i class="fas fa-route"></i> 3.1 km from your location</p>
+                            <a href="tel:029882722" class="call-btn">
+                                <i class="fas fa-phone"></i> 02-9882722
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Station 3 -->
+                    <article class="station-card">
+                        <div class="station-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="station-details">
+                            <h3>Cantonment Police Station</h3>
+                            <p class="distance"><i class="fas fa-route"></i> 4.5 km from your location</p>
+                            <a href="tel:029882722" class="call-btn">
+                                <i class="fas fa-phone"></i> 02-9882722
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Right Side: Emergency & Map Placeholder -->
+            <aside class="emergency-column">
+                <div class="emergency-banner">
+                    <div class="siren-wrap">
+                        <i class="fas fa-lightbulb siren-icon"></i>
+                    </div>
+                    <h3>Emergency Helpline</h3>
+                    <p>Available 24/7 for immediate assistance</p>
+                    <a href="tel:999" class="emergency-dial">
+                        <i class="fas fa-phone-flip"></i> 999
+                    </a>
+                </div>
+
+                <div class="map-preview">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-location-dot"></i>
+                        <p>Interactive Map Loading...</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+</body>
+</html>

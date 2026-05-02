@@ -1,0 +1,249 @@
+:root {
+    --primary-teal: #1a8a91;
+    --dark-bg: #f4f9f9;
+    --nav-blue: #0d1b2a;
+    --text-dark: #333;
+    --white: #ffffff;
+    --border: #d1e5e7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    overflow: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header Styling */
+.header {
+    background: var(--nav-blue);
+    color: white;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+}
+
+.header-links span {
+    margin-right: 25px;
+    cursor: pointer;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.header-links span.active {
+    opacity: 1;
+    border-bottom: 2px solid var(--primary-teal);
+    padding-bottom: 4px;
+}
+
+.header-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-icon { cursor: pointer; opacity: 0.7; }
+
+/* Main Content Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Map Section */
+.map-section {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    animation: slideUp 0.6s ease-out;
+}
+
+.transport-tabs { margin-bottom: 15px; }
+
+.tab {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+    color: var(--primary-teal);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background: var(--primary-teal);
+    color: white;
+}
+
+.map-canvas {
+    flex: 1;
+    background: #e3ecec;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pin {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.pin-a { top: 30%; left: 15%; background: #2980b9; }
+.pin-b { bottom: 35%; right: 25%; background: #f1c40f; color: #333; }
+
+.map-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.map-controls button {
+    width: 35px;
+    height: 35px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Details Panel */
+.details-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 1s ease-in;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-stats {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.dist { color: var(--primary-teal); }
+
+.traffic-status {
+    color: #777;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.location-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.dot.a { background: #1abc9c; }
+.dot.b { background: #f39c12; }
+
+.alt-card {
+    border: 2px solid var(--primary-teal);
+    background: #f1fbfc;
+}
+
+.alt-header .alt-icons { color: var(--primary-teal); }
+
+.start-btn {
+    background: var(--primary-teal);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.start-btn:hover { background: #146e74; transform: translateY(-2px); }
+
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
